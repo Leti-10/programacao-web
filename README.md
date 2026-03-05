@@ -1,1 +1,1 @@
-# Repositório voltaado para armazenamento das atividades de programação web
+Repositório voltado para armazenamento das atividades de programação web
