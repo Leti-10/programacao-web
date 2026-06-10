@@ -1,0 +1,54 @@
+.wrapper {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.table th {
+  padding: 14px 16px;
+  color: var(--muted);
+  background: #f7f7f4;
+  font-family: "DM Mono";
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.table td {
+  max-width: 260px;
+  padding: 16px;
+  border-top: 1px solid #ecece8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.flag {
+  width: 34px;
+  height: 22px;
+  border: 1px solid #ddd;
+  object-fit: cover;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+}
+.actions button {
+  border: 0;
+  padding: 0;
+  color: #555;
+  background: transparent;
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.actions button:last-child {
+  color: #9b1515;
+}
+.empty {
+  padding: 60px;
+  color: var(--muted);
+  text-align: center;
+}

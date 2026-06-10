@@ -1,0 +1,35 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+}
+.content {
+  min-width: 0;
+  padding: 0 clamp(24px, 5vw, 76px) 70px;
+}
+.topbar {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "DM Mono";
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    display: block;
+  }
+  .content {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar span:last-child {
+    display: none;
+  }
+}

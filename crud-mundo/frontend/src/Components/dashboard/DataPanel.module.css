@@ -1,0 +1,57 @@
+.panel {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  background: white;
+}
+.toolbar {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.toolbar input {
+  flex: 1;
+}
+.toolbar select {
+  max-width: 260px;
+}
+.error {
+  margin: 0;
+  padding: 14px 16px;
+  border-bottom: 1px solid #efcaca;
+  color: #a10f0f;
+  background: #fff3f3;
+  font-size: 13px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+.pagination div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.pagination button {
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  background: white;
+}
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 650px) {
+  .toolbar {
+    flex-direction: column;
+  }
+  .toolbar select {
+    max-width: none;
+  }
+}

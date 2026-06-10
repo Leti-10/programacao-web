@@ -1,0 +1,90 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  overflow: hidden;
+}
+.page > * {
+  min-width: 0;
+}
+.presentation {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 8vw, 120px);
+  color: white;
+  background: var(--black);
+}
+.presentation::after {
+  content: "";
+  position: absolute;
+  right: -18vw;
+  bottom: -30vw;
+  width: 55vw;
+  height: 55vw;
+  border: 1px solid #555;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 8vw #111,
+    0 0 0 calc(8vw + 1px) #333,
+    0 0 0 16vw #111,
+    0 0 0 calc(16vw + 1px) #292929;
+}
+.presentation h1 {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0;
+  font-size: clamp(56px, 7vw, 108px);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+.presentation p {
+  position: relative;
+  z-index: 1;
+  max-width: 510px;
+  color: #aaa;
+  line-height: 1.7;
+}
+.coordinates {
+  position: absolute;
+  bottom: 38px;
+  left: clamp(40px, 8vw, 120px);
+  z-index: 1;
+  color: #777;
+  font-family: "DM Mono";
+  font-size: 11px;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 46px;
+  padding: clamp(32px, 6vw, 90px);
+  background: white;
+}
+.panel h2 {
+  margin: 8px 0 0;
+  font-size: 31px;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .presentation {
+    min-height: 42vh;
+  }
+  .presentation h1 {
+    font-size: 60px;
+  }
+  .panel {
+    width: 100%;
+    min-width: 0;
+    min-height: 58vh;
+    gap: 30px;
+  }
+}

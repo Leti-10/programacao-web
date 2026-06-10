@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  background: white;
+}
+.grid article {
+  display: grid;
+  gap: 18px;
+  padding: 22px 26px;
+  border-right: 1px solid var(--line);
+}
+.grid article:last-child {
+  border-right: 0;
+}
+.grid span {
+  color: var(--muted);
+  font-family: "DM Mono";
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.grid strong {
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
