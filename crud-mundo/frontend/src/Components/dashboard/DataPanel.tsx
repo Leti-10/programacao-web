@@ -19,6 +19,8 @@ type Props = {
   onPageChange: (page: number) => void;
   onEdit: (record: RecordData) => void;
   onRemove: (record: RecordData) => void;
+  onSelectMapRecord?: (record: RecordData) => void;
+  
 };
 
 export default function DataPanel(props: Props) {
@@ -54,6 +56,7 @@ export default function DataPanel(props: Props) {
         loading={props.loading}
         onEdit={props.onEdit}
         onRemove={props.onRemove}
+        onSelectMapRecord={props.onSelectMapRecord}
       />
       <footer className={styles.pagination}>
         <span>{props.total} registro(s)</span>

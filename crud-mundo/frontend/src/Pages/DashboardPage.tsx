@@ -1,23 +1,26 @@
-import { useState } from "react";
-import DashboardLayout from "../Components/layout/DashboardLayout";
-import EntityForm from "../Components/forms/EntityForm";
-import DataPanel from "../Components/dashboard/DataPanel";
-import MapCard from "../Components/dashboard/MapCard";
-import PageHeader from "../Components/dashboard/PageHeader";
-import StatsGrid from "../Components/dashboard/StatsGrid";
-import { useDashboardData } from "../hooks/useDashboardData";
-import type { Entity, RecordData } from "../types/entities";
+import { useState } from 'react';
+import DashboardLayout from '../Components/layout/DashboardLayout';
+import EntityForm from '../Components/forms/EntityForm';
+import DataPanel from '../Components/dashboard/DataPanel';
+import MapCard from '../Components/dashboard/MapCard';
+import PageHeader from '../Components/dashboard/PageHeader';
+import StatsGrid from '../Components/dashboard/StatsGrid';
+import { useDashboardData } from '../hooks/useDashboardData';
+import type { Entity, RecordData } from '../types/entities';
 
 type Props = { userName: string; onLogout: () => void };
 
 export default function DashboardPage({ userName, onLogout }: Props) {
-  const [entity, setEntity] = useState<Entity>("continentes");
+  const [entity, setEntity] = useState<Entity>('continentes');
   const [editing, setEditing] = useState<RecordData | null>(null);
   const [formOpen, setFormOpen] = useState(false);
+  const [selectedMapRecord, setSelectedMapRecord] = useState<RecordData | null>(null);
   const data = useDashboardData(entity);
   const mapRecord =
-    entity === "cidades" ? data.records.find((item) => item.latitude && item.longitude) : undefined;
-
+    entity === 'cidades'
+      ? (selectedMapRecord ?? data.records.find((item) => item.latitude && item.longitude))
+      : undefined;
+  
   function openForm(record: RecordData | null = null) {
     setEditing(record);
     setFormOpen(true);
@@ -65,6 +68,7 @@ export default function DashboardPage({ userName, onLogout }: Props) {
         onPageChange={data.setPage}
         onEdit={openForm}
         onRemove={data.remove}
+        onSelectMapRecord={setSelectedMapRecord}
       />
       {mapRecord && <MapCard record={mapRecord} />}
       {formOpen && (

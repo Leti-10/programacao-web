@@ -25,6 +25,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.table tr:hover {
+  background: #e4e4e4;
+}
 .flag {
   width: 34px;
   height: 22px;
